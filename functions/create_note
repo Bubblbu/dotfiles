@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# Usage: extract <file>
+# Description: extracts archived files / mounts disk images
+# Note: .dmg/hdiutil is macOS-specific.
+#
+# credit: http://nparikh.org/notes/zshrc.txt
+create_notes () {
+    #define the template.
+    cat <<EOF > $1.md
+---
+key: $1
+date: $(date --iso-8601=seconds)
+author: Asura Enkhbayar
+---
+
+# Notes for $1
+
+
+EOF
+}
