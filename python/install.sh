@@ -1,5 +1,5 @@
 # Pyenv & Pyenv-virtualenv
-if test ! $(which pyenv)
+if ! function_exists pyenv
 then
     # Install pyenv
     curl https://pyenv.run | bash
@@ -9,15 +9,15 @@ then
 fi
 
 # install poetry
-if test ! $(which poetry)
+if ! function_exists poetry
 then
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 fi
 
 # install pipx installed
-if test ! $(which pipx)
+if ! function_exists pipx
 then
-  if test $(which python)
+  if function_exists python
   then
     python -m pip install --user pipx
     python -m pipx ensurepath
@@ -25,22 +25,22 @@ then
 fi
 
 # install several python dev packages globally
-if test ! $(which black)
+if ! function_exists black
 then
     pipx install black
 fi
 
-if test ! $(which cookiecutter)
+if ! function_exists cookiecutter
 then
     pipx install cookiecutter
 fi
 
-if test ! $(which jupyterlab)
+if ! function_exists jupyter-lab
 then
     pipx install jupyterlab
 fi
 
-if test ! $(which tqdm)
+if ! function_exists tqdm
 then
     pipx install tqdm
 fi
