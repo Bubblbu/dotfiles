@@ -2,3 +2,7 @@
 *~
 *.swp
 .httr-oauth
+
+# Coding
+.vscode
+.ipynb_checkpoints
