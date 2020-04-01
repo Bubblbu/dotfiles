@@ -137,6 +137,18 @@ install_dotfiles () {
   done
 }
 
+# install_XDG_dotfiles () {
+#   info 'installing XDG dotfiles'
+
+#   local overwrite_all=false backup_all=false skip_all=false
+
+#   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.xdg.symlink' -not -path '*.git*')
+#   do
+#     dst="$HOME/.$(basename "${src%.*}")"
+#     link_file "$src" "$dst"
+#   done
+# }
+
 setup_gitconfig
 install_dotfiles
 
