@@ -1,5 +1,5 @@
 # plugins
-plugins=(git colored-man-pages)
+plugins=(git colored-man-pages taskwarrior)
 
 fpath=($ZSHDOT/functions $fpath)
 
