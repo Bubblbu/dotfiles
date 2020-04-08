@@ -438,7 +438,7 @@
     <!-- Launch a terminal on Ctrl + Alt + T-->
     <keybind key="C-A-T">
       <action name="Execute">
-        <command>lxsession-default terminal</command>
+        <command>lxterminal</command>
       </action>
     </keybind>
 
@@ -485,26 +485,20 @@
     </keybind>
 
     <!--  SCREENSHOTS -->
-    <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
-    <keybind key="A-Print">
-      <action name="Execute">
-        <command>lxsession-default screenshot window</command>
-      </action>
-    </keybind>
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>lxsession-default screenshot</command>
+        <command>flameshot gui -p /home/asura/Media/Pictures/screenshots</command>
       </action>
     </keybind>
-    <keybind key="A-Print">
+    <keybind key="C-Print">
       <action name="Execute">
-        <command>lxsession-default screenshot window</command>
+        <command>flameshot full -p /home/asura/Media/Pictures/screenshots</command>
       </action>
     </keybind>
-    <keybind key="C-A-Print">
+    <keybind key="C-S-Print">
       <action name="Execute">
-        <command>scrot -s</command>
+        <command>flameshot gui -d 2000 -p /home/asura/Media/Pictures/screenshots</command>
       </action>
     </keybind>
 
@@ -883,6 +877,7 @@
     <!-- Fix certain applications to desktops -->
     <applications>
       <application name="rambox">
+        <decor>no</decor>
         <desktop>3</desktop>
       </application>
       <application name="slack">
@@ -898,6 +893,7 @@
         <decor>no</decor>
       </application>
       <application class="Firefox">
+        <desktop>1</desktop>
         <decor>no</decor>
       </application>
       <!--
