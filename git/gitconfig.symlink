@@ -8,6 +8,7 @@
         promote = !$ZSHDOT/bin/git-promote
         rank-contributors = !$ZSHDOT/bin/git-rank-contributors
         count   = !git shortlog -sn
+	rm-deleted = !git rm $(git ls-files --deleted)
 [color]
         diff = auto
         status = auto
