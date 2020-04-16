@@ -1,3 +1,6 @@
+# Jupyter
+export JUPYTER_CONFIG_DIR=~/.config/jupyter
+
 # Setup poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 

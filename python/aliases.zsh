@@ -3,7 +3,7 @@ alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 alias pip='python -m pip'
 
 # Jupyter
-alias jl="jupyter-lab"
+alias jl="/home/asura/.local/bin/jupyter lab"
 alias nbstrip_jq="jq --indent 1 \
     '(.cells[] | select(has(\"outputs\")) | .outputs) = []  \
     | (.cells[] | select(has(\"execution_count\")) | .execution_count) = null  \
