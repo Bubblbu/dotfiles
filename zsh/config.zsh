@@ -1,5 +1,5 @@
 # plugins
-plugins=(git colored-man-pages taskwarrior)
+plugins=(git colored-man-pages zsh-autosuggestions)
 
 fpath=($ZSHDOT/functions $fpath)
 
