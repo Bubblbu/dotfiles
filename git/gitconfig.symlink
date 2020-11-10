@@ -17,6 +17,7 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+        pager = delta --theme=\"Monokai Extended\" 
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -26,10 +27,6 @@
 [help]
         autocorrect = 1
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
         default = simple
-# [credential]
-# 	helper = osxkeychain
+[interactive]
+        diffFilter = delta --color-only
