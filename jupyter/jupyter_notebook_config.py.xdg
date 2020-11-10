@@ -643,3 +643,65 @@ c.NotebookApp.notebook_dir = u'/home/asura/Projects/'
 #  
 #  By default, all installed kernels are allowed.
 #c.KernelSpecManager.whitelist = set([])
+
+#------------------------------------------------------------------------------
+# JupyterNotebook Pre-Save Hook for Slide Export
+#------------------------------------------------------------------------------
+
+import io
+import os
+import nbformat
+from nbconvert.exporters import SlidesExporter
+from notebook.utils import to_api_path
+
+
+def export_to_slides(model, path, contents_manager, **kwargs):
+    """A pre-save hook that exports notebooks as slides if one of their cell has a "slideshow" metadata"""
+    if model["type"] != "notebook":
+        return
+
+    nb = model['content']
+    assert nb is not None, "Please call this function as a pre_save_hook"
+
+    try:
+        # Is this a paired notebook?
+        from jupytext.paired_paths import paired_paths
+        fmt, formats = contents_manager.paired_notebooks.get(path)
+        alt_paths = paired_paths(path, fmt, formats)
+
+        # run the export only if this function is called on the first elemnt of the pair
+        if len(alt_paths) > 1 and path != alt_paths[0][0]:
+            return
+
+    except (AttributeError, ImportError):
+        pass
+
+    slideshow = False
+    for cell in nb['cells']:
+        if 'slideshow' in cell['metadata']:
+            slideshow = True
+            break
+
+    if not slideshow:
+        return
+
+    log = contents_manager.log
+    log.debug('Notebook %s has a slideshow cell metadata', path)
+
+    os_path = contents_manager._get_os_path(path)
+    if os.path.basename(os_path).startswith('Untitled'):
+        log.info("Not exporting %s as slides because it's untitled", path)
+        return
+
+    exporter = SlidesExporter(parent=contents_manager)
+    slides, resources = exporter.from_notebook_node(nbformat.from_dict(nb))
+
+    base, __ = os.path.splitext(os_path)
+    slides_fname = base + resources.get('output_extension', '.html')
+    log.info("Saving slides at /%s", to_api_path(slides_fname, contents_manager.root_dir))
+
+    with io.open(slides_fname, "w", encoding="utf-8") as f:
+        f.write(slides)
+
+
+c.FileContentsManager.pre_save_hook = export_to_slides
