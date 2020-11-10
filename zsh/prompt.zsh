@@ -4,6 +4,7 @@ export TERM="xterm-256color"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
