@@ -884,8 +884,7 @@
         <desktop>3</desktop>
         <decor>no</decor>
       </application>
-      <application name="spotify">
-        <desktop>4</desktop>
+      <application name="chromium-browser">
         <decor>no</decor>
       </application>
       <application class="Doublecmd">
