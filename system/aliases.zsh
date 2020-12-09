@@ -19,5 +19,10 @@ alias smr="sh -c 'xrandr --output HDMI2 --off --output eDP1 --mode 1920x1080 --r
 alias restart_wifi="sudo service network-manager restart"
 alias aptdate="sudo apt update && sudo apt upgrade -y"
 
+# Edit the dotfiles
 alias dotfiles_edit="e /home/asura/.dotfiles/"
-alias dotfiles_bootstrap="source /home/asura/.dotfiles/script/bootstrap"
+alias dotfiles_bootstrap="cd /home/asura/.dotfiles/ && script/bootstrap"
+
+# copy & paste
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
