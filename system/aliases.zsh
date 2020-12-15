@@ -1,3 +1,22 @@
+# Edit the dotfiles
+alias dfe="e /home/asura/.dotfiles/"
+alias dfb="cd /home/asura/.dotfiles/ && script/bootstrap"
+
+# Utiities
+alias restart_wifi="sudo service network-manager restart"
+alias aptdate="sudo apt update && sudo apt upgrade -y"
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Monitor shortcuts
+alias smd="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --same-as HDMI2'"
+alias smr="sh -c 'xrandr --output HDMI2 --off --output eDP1 --auto --same-as HDMI2'"
+alias smright="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --left-of HDMI2'"
+alias smleft="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --right-of HDMI2'"
+alias smbelow="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --above HDMI2'"
+alias smtop="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --below HDMI2'"
+
 # General aliases
 alias ls="lsd"
 alias cds="cd ~/Projects/scholcommlab"
@@ -9,20 +28,3 @@ alias ..='cd ..'
 alias ...='cd ...'
 alias ....='cd ....'
 alias .....='cd .....'
-
-# Monitor shortcuts
-alias sme="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --mode 1920x1080 --rate 60.02 --left-of HDMI2'"
-alias smd="sh -c 'xrandr --output HDMI2 --mode 1920x1080 --rate 60.00 --output eDP1 --mode 1920x1080 --rate 60.02 --same-as HDMI2'"
-alias smr="sh -c 'xrandr --output HDMI2 --off --output eDP1 --mode 1920x1080 --rate 60.02 --same-as HDMI2'"
-
-# Utiities
-alias restart_wifi="sudo service network-manager restart"
-alias aptdate="sudo apt update && sudo apt upgrade -y"
-
-# Edit the dotfiles
-alias dotfiles_edit="e /home/asura/.dotfiles/"
-alias dotfiles_bootstrap="cd /home/asura/.dotfiles/ && script/bootstrap"
-
-# copy & paste
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
