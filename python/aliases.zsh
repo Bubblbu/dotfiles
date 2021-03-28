@@ -4,6 +4,8 @@ alias pip='python -m pip'
 
 # Jupyter
 alias jl="/home/asura/.local/bin/jupyter lab"
+alias jupyter="/home/asura/.local/bin/jupyter"
+
 alias nbstrip_jq="jq --indent 1 \
     '(.cells[] | select(has(\"outputs\")) | .outputs) = []  \
     | (.cells[] | select(has(\"execution_count\")) | .execution_count) = null  \
