@@ -3,8 +3,9 @@ alias dfe="e /home/asura/.dotfiles/"
 alias dfb="cd /home/asura/.dotfiles/ && script/bootstrap"
 
 # Utiities
-alias restart_wifi="sudo service network-manager restart"
 alias aptdate="sudo apt update && sudo apt upgrade -y"
+alias restart_wifi="sudo service network-manager restart"
+alias restart_audo="pulseaudio -k && sudo alsa force-reload"
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
