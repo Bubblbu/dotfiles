@@ -895,6 +895,10 @@
         <desktop>1</desktop>
         <decor>no</decor>
       </application>
+      <application class="Firefox" name="zotero">
+        <desktop>2</desktop>
+        <decor>no</decor>
+      </application>
       <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
