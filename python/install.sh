@@ -3,9 +3,6 @@ if ! function_exists pyenv
 then
     # Install pyenv
     curl https://pyenv.run | bash
-
-    # Clone pyenv-virtualenv into pyenvs plugins
-    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 fi
 
 # install poetry
