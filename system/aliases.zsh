@@ -7,6 +7,7 @@ alias aptdate="sudo apt update && sudo apt upgrade -y"
 alias restart_wifi="sudo service network-manager restart"
 alias restart_audo="pulseaudio -k && sudo alsa force-reload"
 
+# Clipboard
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
@@ -18,8 +19,10 @@ alias smleft="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --right-o
 alias smbelow="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --above HDMI2'"
 alias smtop="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --below HDMI2'"
 
-# General aliases
+# lsd
 alias ls="lsd"
+
+# Navigation
 alias cds="cd ~/Projects/scholcommlab"
 alias cdp="cd ~/Projects"
 alias cdd="cd ~/Downloads"
