@@ -14,7 +14,9 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(git pip zsh-vi-mode zsh-completions z zsh-autosuggestions colored-man-pages)
+plugins=(git ssh-agent pip zsh-vi-mode zsh-completions z zsh-autosuggestions colored-man-pages)
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 source $ZSH/oh-my-zsh.sh
 
