@@ -13,6 +13,9 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 source $ZSH/oh-my-zsh.sh
 
+# lsd
+alias ls="lsd"
+
 fpath=($ZSHDOT/functions $fpath)
 
 autoload -U $ZSHDOT/functions/*(:t)

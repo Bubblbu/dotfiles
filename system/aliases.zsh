@@ -19,9 +19,6 @@ alias smleft="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --right-o
 alias smbelow="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --above HDMI2'"
 alias smtop="sh -c 'xrandr --output HDMI2 --auto --output eDP1 --auto --below HDMI2'"
 
-# lsd
-alias ls="lsd"
-
 # Navigation
 alias cds="cd ~/Projects/scholcommlab"
 alias cdp="cd ~/Projects"
