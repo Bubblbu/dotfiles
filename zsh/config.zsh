@@ -1,3 +1,5 @@
+export ZSH=$HOME/.oh-my-zsh
+
 # plugins
 plugins=(git colored-man-pages zsh-autosuggestions)
 
