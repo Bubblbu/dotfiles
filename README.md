@@ -46,6 +46,7 @@ Requirements: oh-my-zsh, powerlevel10k, lsd
 
 - Git: `aliases.zsh`, `git-flow-completion.zsh`, and a few global git config files
 - Vim: `vimrc.symlink`
+- Direnv: `direnv/direnvrc.xdg`
 - Other: `node/path.zsh`, `ruby/path.zsh`, `texlive/path.zsh`
 
 ### Python, Jupyter
