@@ -1,43 +1,83 @@
-# Pyenv & Pyenv-virtualenv
-if ! function_exists pyenv
-then
-    # Install pyenv
+#!/bin/sh
+
+# Global variables
+py_version="3.8.12"
+
+# Functions
+install_package() {
+    if ! foobar_loc="$(type -p "$1")" || [[ -z $foobar_loc ]]
+    then
+        echo "Could not find $1; attempting to install"
+        $2
+    else
+        echo "$1 installed; skipping installation"
+    fi
+}
+
+
+### Packages ###
+# Install pyenv
+pkg_name="pyenv"
+install_cmd () {
+    # install pyenv
     curl https://pyenv.run | bash
-fi
+
+    # config and setup pyenv
+    [[ -z "$PYENV_ROOT" ]] && export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+
+    pyenv init --path
+    pyenv init - --no-rehash zsh
+    pyenv virtualenv-init -
+
+    # install specified python version
+    pyenv install $py_version
+    pyenv global $py_version
+}
+install_package "$pkg_name" install_cmd
+
+
 
 # install poetry
-if ! function_exists poetry
-then
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-fi
+pkg_name="poetry"
+install_cmd() { 
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+}
+install_package "$pkg_name" install_cmd
 
-# install pipx installed
-if ! function_exists pipx
-then
-  if function_exists python
-  then
+# install pipx
+pkg_name="pipx"
+install_cmd() { 
     python -m pip install --user pipx
     python -m pipx ensurepath
-  fi
-fi
+}
+install_package "$pkg_name" install_cmd
 
-# install several python dev packages globally
-if ! function_exists black
-then
+# install jupyter
+pkg_name="jupyter-lab"
+install_cmd() { 
+    pipx install jupyter --include-deps
+    pipx inject jupyter jupyterlab
+}
+install_package "$pkg_name" install_cmd
+
+# install black
+pkg_name="black"
+install_cmd() { 
     pipx install black
-fi
+}
+install_package "$pkg_name" install_cmd
 
-if ! function_exists cookiecutter
-then
+# install cookiecutter
+pkg_name="cookiecutter"
+install_cmd() { 
     pipx install cookiecutter
-fi
+}
+install_package "$pkg_name" install_cmd
 
-if ! function_exists jupyter-lab
-then
-    pipx install jupyterlab
-fi
-
-if ! function_exists tqdm
-then
+# install tqdm
+pkg_name="tqdm"
+install_cmd() { 
     pipx install tqdm
-fi
+}
+install_package "$pkg_name" install_cmd
