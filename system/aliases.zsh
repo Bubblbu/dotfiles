@@ -1,6 +1,9 @@
 # ZSH
 alias reload!='. ~/.zshrc'
 
+# use lsd instead of ls
+alias ls="lsd"
+
 # Utiities
 alias aptdate="sudo apt update && sudo apt upgrade -y"
 alias restart_wifi="sudo service network-manager restart"
@@ -29,5 +32,5 @@ alias ...='cd ...'
 alias ....='cd ....'
 alias .....='cd .....'
 
-# Pipe my public key to my clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+# renaming tools
+alias zcp='zmv -C' zln='zmv -L'

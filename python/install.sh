@@ -1,17 +1,5 @@
 #!/bin/sh
 
-# Functions
-install_package() {
-    if ! foobar_loc="$(type -p "$1")" || [[ -z $foobar_loc ]]
-    then
-        echo "Could not find $1; attempting to install"
-        $2
-    else
-        echo "$1 installed; skipping installation"
-    fi
-}
-
-
 ### Packages ###
 # Install pyenv
 pkg_name="pyenv"
