@@ -42,7 +42,7 @@ while test $# -gt 0; do
 		exit
 		;;
 	"s" | "-s" | "--snap")
-		$ZSHDOT/script/copy_snaps
+		$ZSHDOT/script/symlink_snaps
 		exit
 		;;
 	*)
