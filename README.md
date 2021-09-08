@@ -1,6 +1,23 @@
 # bubblbu does dotfiles
 
-My dotfiles managed using the [@holman approach](https://github.com/holman/dotfiles) with some extra fun added.
+My dotfiles managed using [@holman's approach](https://github.com/holman/dotfiles) with some extra fun added to support configuration files in `$XDG_CONFIG_HOME` and automatic symlinking for snaps.
+
+**usage**
+
+`dot` provides a few wrappers to access the essential functions required to manage your dotfiles. 
+
+```shell
+  dot -- dotfiles management
+
+  Usage: dot [options]
+
+  Options:
+    -e, --edit            Open dotfiles directory for editing
+    -b, --bootstrap       Bootstrap all dotfiles
+    -i, --install         Run install scripts
+    -s, --snap                    Copy snap .desktop files
+    -h, --help            Show this help message and exit
+```
 
 ## how it works
 
@@ -15,16 +32,11 @@ topic/install.sh: Any file named install.sh is executed when you run script/inst
 topic/*.symlink: Any file ending in *.symlink gets symlinked into your `$HOME`. This is so you can keep all of those versioned in your dotfiles but still keep those autoloaded files in your home directory. These get symlinked in when you run script/bootstrap.
 ```
 
-However, I've also added support for **config files that are placed in `$XDG_CONFIG_HOME`** (usually ~/.config/appname/config.file)
+However, I've also added support for **config files that are placed in `$XDG_CONFIG_HOME`** (usually ~/.config/appname/config.file) and automatic symlinking of `.desktop` files of apps that were installed with snap which are otherwise not found by default with zsh. 
 
 ```
-topic/*.xdg: Any file ending in *.xdg gets symlinked into your `$XDG_CONFIG_HOME`.
+app/*.xdg: Any file ending in *.xdg gets symlinked into your `$XDG_CONFIG_HOME`. The folder name is not optional in this case as the configuration files are placed accordingly.
 ```
-
-**setup and running things**
-
-- `script/install` runs dotfile installers (currently only python, oh-my-zsh)
-- `script/bootstrap` to run all things tasty in the dotfiles
 
 ## the dotfiles
 
