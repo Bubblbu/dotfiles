@@ -36,8 +36,6 @@ install_cmd () {
 }
 install_package "$pkg_name" install_cmd
 
-
-
 # install poetry
 pkg_name="poetry"
 install_cmd() { 
@@ -54,7 +52,7 @@ install_cmd() {
 install_package "$pkg_name" install_cmd
 
 # install jupyter
-pkg_name="jupyter-lab"
+pkg_name="jupyter"
 install_cmd() { 
     pipx install jupyter --include-deps
     pipx inject jupyter jupyterlab
