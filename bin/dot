@@ -7,8 +7,8 @@
 
 set -e
 
-parentDirectory="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
-dotfilesDirectory="$(cd "$( dirname "$parentDirectory" )" && pwd -P)"
+parentDirectory="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+dotfilesDirectory="$(cd "$(dirname "$parentDirectory")" && pwd -P)"
 
 displayUsageAndExit() {
 	echo "dot -- dotfiles management"
@@ -16,30 +16,33 @@ displayUsageAndExit() {
 	echo "Usage: dot [options]"
 	echo ""
 	echo "Options:"
-	echo "  -e, --edit    Open dotfiles directory for editing"
-	echo "  -h, --help    Show this help message and exit"
+	echo "  -e, --edit		Open dotfiles directory for editing"
+	echo "  -b, --bootstrap	Bootstrap all dotfiles"
+	echo "  -i, --install		Run install scripts"
+	echo "  -h, --help    	Show this help message and exit"
 	exit
 }
 
 while test $# -gt 0; do
 	case "$1" in
-		"-h"|"--help")
-			displayUsageAndExit
-			;;
-		"-e"|"--edit")
-			exec "$EDITOR" "$dotfilesDirectory"
-			exit
-			;;
-		*)
-			echo "Invalid option: $1"
-			displayUsageAndExit
-			;;
+	"-h" | "--help")
+		displayUsageAndExit
+		;;
+	"-e" | "--edit")
+		exec "$EDITOR" "$dotfilesDirectory"
+		exit
+		;;
+	"-b" | "--bootstrap")
+		$ZSHDOT/script/bootstrap
+		exit
+		;;
+	"-i" | "--install")
+		$ZSHDOT/script/install
+		exit
+		;;
+	*) ;;
 	esac
 	shift
 done
 
 export ZSH=$HOME/.dotfiles
-
-# Install software
-# echo "› $ZSHDOT/script/install"
-# $ZSHDOT/script/install
