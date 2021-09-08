@@ -7,9 +7,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(git ssh-agent pip zsh-vi-mode zsh-completions z zsh-autosuggestions colored-man-pages)
+plugins=(colored-man-pages git ssh-agent z zsh-vi-mode zsh-completions  zsh-autosuggestions)
 
-zstyle :omz:plugins:ssh-agent agent-forwarding on
+# Use ksshaskpass to manage the SSH key with the system wallet
+zstyle :omz:plugins:ssh-agent helper ksshaskpass
 
 source $ZSH/oh-my-zsh.sh
 
