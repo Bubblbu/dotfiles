@@ -1,6 +1,5 @@
-# Edit the dotfiles
-alias dfe="e /home/asura/.dotfiles/"
-alias dfb="cd /home/asura/.dotfiles/ && script/bootstrap"
+# ZSH
+alias reload!='. ~/.zshrc'
 
 # Utiities
 alias aptdate="sudo apt update && sudo apt upgrade -y"

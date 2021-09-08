@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Global variables
-py_version="3.8.12"
-
 # Functions
 install_package() {
     if ! foobar_loc="$(type -p "$1")" || [[ -z $foobar_loc ]]
@@ -31,8 +28,8 @@ install_cmd () {
     pyenv virtualenv-init -
 
     # install specified python version
-    pyenv install $py_version
-    pyenv global $py_version
+    pyenv install $PY_VERSION
+    pyenv global $PY_VERSION
 }
 install_package "$pkg_name" install_cmd
 
