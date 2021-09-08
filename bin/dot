@@ -19,28 +19,35 @@ displayUsageAndExit() {
 	echo "  -e, --edit		Open dotfiles directory for editing"
 	echo "  -b, --bootstrap	Bootstrap all dotfiles"
 	echo "  -i, --install		Run install scripts"
+	echo "  -s, --snap			Copy snap .desktop files"
 	echo "  -h, --help    	Show this help message and exit"
 	exit
 }
 
 while test $# -gt 0; do
 	case "$1" in
-	"-h" | "--help")
+	"h" | "-h" | "--help")
 		displayUsageAndExit
 		;;
-	"-e" | "--edit")
+	"e" | "-e" | "--edit")
 		exec "$EDITOR" "$dotfilesDirectory"
 		exit
 		;;
-	"-b" | "--bootstrap")
+	"b" | "-b" | "--bootstrap")
 		$ZSHDOT/script/bootstrap
 		exit
 		;;
-	"-i" | "--install")
+	"i" | "-i" | "--install")
 		$ZSHDOT/script/install
 		exit
 		;;
-	*) ;;
+	"s" | "-s" | "--snap")
+		$ZSHDOT/script/copy_snaps
+		exit
+		;;
+	*)
+		displayUsageAndExit
+		;;
 	esac
 	shift
 done

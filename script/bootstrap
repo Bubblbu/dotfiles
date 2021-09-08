@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 # bootstrap installs things.
 
@@ -59,8 +59,6 @@ link_file () {
     then
 
       local currentSrc="$(readlink $dst)"
-
-      echo $currentSrc $src
 
       if [ "$currentSrc" == "$src" ]
       then
@@ -124,7 +122,7 @@ link_file () {
 }
 
 install_dotfiles () {
-  info 'installing dotfiles'
+  info '> installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
 
@@ -136,7 +134,7 @@ install_dotfiles () {
 }
 
 install_XDG_dotfiles () {
-  info 'installing dotfiles for XDG_CONFIG_HOME'
+  info '> installing dotfiles for XDG_CONFIG_HOME'
 
   local overwrite_all=false backup_all=false skip_all=false
 
@@ -149,36 +147,10 @@ install_XDG_dotfiles () {
   done
 }
 
-symlink_snap_apps () {
-  info 'Symlinking Snap apps'
-
-  local overwrite_all=false backup_all=false skip_all=false
-
-  local source="/var/lib/snapd/desktop/applications"
-  local target="$HOME/.local/share/applications"
-
-  for src in $(find -H "$source" -name '*.desktop')
-  do
-    filename=${src##*/}
-    dst="$target/$filename"
-    link_file "$src" "$dst"
-  done
-}
-
-
 setup_gitconfig
-
-echo ''
-
-symlink_snap_apps
-
-echo ''
 
 install_dotfiles
 
-echo ''
-
 install_XDG_dotfiles
 
-echo ''
-echo '  All installed!'
+success 'Finished!'
