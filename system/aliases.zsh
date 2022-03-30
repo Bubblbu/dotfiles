@@ -2,7 +2,12 @@
 alias reload!='. ~/.zshrc'
 
 # use lsd instead of ls
-alias ls="lsd"
+alias ls='lsd'
+
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 # Utiities
 alias aptdate="sudo apt update && sudo apt upgrade -y"
