@@ -1,5 +1,5 @@
 # on .{bash,zsh,wtv}rc
-alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
+#alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 alias pip='python -m pip'
 
 # Jupyter
