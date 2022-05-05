@@ -38,4 +38,5 @@ alias ....='cd ....'
 alias .....='cd .....'
 
 # renaming tools
-alias zcp='zmv -C' zln='zmv -L'
+alias zcp='zmv -C'
+alias zln='zmv -L'
