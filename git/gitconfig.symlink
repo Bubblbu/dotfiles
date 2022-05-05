@@ -3,22 +3,32 @@
         path = ~/.gitconfig.local
 [hub]
         protocol = https
-[alias]
-        co = checkout
-        promote = !$ZSHDOT/bin/git-promote
-        rank-contributors = !$ZSHDOT/bin/git-rank-contributors
-        count   = !git shortlog -sn
-	rm-deleted = !git rm $(git ls-files --deleted)
+
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+        pager = delta # --theme=\"Monokai Extended\" 
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
-[core]
-        excludesfile = ~/.gitignore
-        editor = vim
-        pager = delta --theme=\"Monokai Extended\" 
-	pager = git-split-diffs
+
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -31,7 +41,7 @@
         rebase = false
 [push]
         default = simple
-[interactive]
-        diffFilter = delta --color-only
+
+# set default branch name to main instead of master
 [init]
 	defaultBranch = main
