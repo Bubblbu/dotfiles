@@ -25,5 +25,6 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 # renaming tools
+alias mmv='noglob zmv -W'
 alias zcp='zmv -C'
 alias zln='zmv -L'
