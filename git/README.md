@@ -18,5 +18,7 @@ pager: [delta](https://github.com/dandavison/delta)
 
 ## gitconfig.local
 
+helper function in `dot bootstrap` will setup gitconfic.local using gitconfig.local.example
+
 ## gitignore
 
