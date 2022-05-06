@@ -1,2 +1,2 @@
 # Jupyter
-export JUPYTER_CONFIG_DIR=~/.config/jupyter
+export JUPYTER_CONFIG_DIR="~/.config/jupyter"
