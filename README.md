@@ -19,6 +19,16 @@ My dotfiles managed using [@holman's approach](https://github.com/holman/dotfile
     -h, --help            Show this help message and exit
 ```
 
+## install
+
+Clone this repository into your home directory and run the following scripts:
+
+```
+cd bootstrap
+source script/bootstrap
+source script/install
+```
+
 ## how it works
 
 Basic usage is the same as described by Holman's dotfiles:
