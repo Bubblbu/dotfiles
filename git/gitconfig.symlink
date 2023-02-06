@@ -1,3 +1,7 @@
+# `git dft` is less to type than `git difftool`.
+[alias]
+        dft = difftool
+
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
@@ -22,6 +26,16 @@
 
 [diff]
     colorMoved = default
+    tool = difftastic
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
 
 [color]
         diff = auto
@@ -29,12 +43,13 @@
         branch = auto
         ui = true
 
+
+
 [apply]
         whitespace = nowarn
 [mergetool]
         keepBackup = false
-[difftool]
-        prompt = false
+
 [help]
         autocorrect = 1
 [pull]
