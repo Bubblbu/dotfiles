@@ -1,5 +1,14 @@
 #!/bin/sh
 
+install_package() {
+    if ! command_exists $1; then
+        echo "Could not find $1; attempting to install"
+        $2
+    else
+        echo "$1 installed; skipping installation"
+    fi
+}
+
 ### Packages ###
 # Install pyenv
 pkg_name="pyenv"
