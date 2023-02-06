@@ -3,7 +3,7 @@
 alias pip='python -m pip'
 
 # Jupyter
-alias jl="/home/asura/.local/bin/jupyter lab"
+alias jl="/home/asura/.local/bin/jupyter-lab"
 alias jupyter="/home/asura/.local/bin/jupyter"
 alias jupypip="pipx runpip jupyter $1"
 
