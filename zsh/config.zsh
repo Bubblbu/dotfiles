@@ -17,6 +17,14 @@ setopt NO_HIST_BEEP # Turn off beep when non-existing history element is accesse
 setopt PROMPT_SUBST # Additional subsitutions
 setopt CORRECT # Try to correct the spelling of commands
 
+####################
+# Git Autocomplete #
+####################
+
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
+
 #################
 # Misc settings #
 #################
