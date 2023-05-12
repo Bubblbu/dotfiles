@@ -2,29 +2,12 @@
 #
 # bootstrap installs things.
 
+source functions/logging
+
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
 set -e
-
-# Functions
-loguser () {
-  printf "\r  [ \033[0;33m??\033[0m ] $1\n"
-}
-
-loginfo () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-logsuccess () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
-}
-
-logfail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-  echo ''
-  exit
-}
 
 link_file () {
   local src=$1 dst=$2
@@ -141,10 +124,13 @@ install_XDG_dotfiles () {
   done
 }
 
+# This creates a .symlink file for global gitconfigs from the example file
 setup_gitconfig
-  
+
+# Symlink all regular dotfiles to ~  
 install_dotfiles
 
+# Symlink all XDG dotfiles ~/.config/topic/
 install_XDG_dotfiles
 
 logsuccess 'Finished!'

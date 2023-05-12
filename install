@@ -2,9 +2,11 @@
 #
 # Run all dotfiles installers.
 
+source $DOTHOME/functions/logging
+
 set -e
 
 cd $DOTHOME
 
 # find the installers and run them iteratively
-find . -name install.sh | while read installer; do echo "> ${installer}" && sh -c "${installer}" && echo ""; done
+find . -name install.sh | while read installer; do loginfo "> ${installer}" && sh -c "${installer}" && logsuccess "Finished running ${installer}" && echo ""; done

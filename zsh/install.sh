@@ -1,11 +1,13 @@
 #!/bin/sh
 
+source $DOTHOME/functions/logging
+
 install_zsh_plugin() {
   if [[ ! -d $2 ]]; then
-    echo "Could not locate $2; attempting to install"
+    loginfo "Could not locate $2; attempting to install"
     $3
   else
-    echo "$1 installed; skipping installation"
+    loginfo "$1 installed; skipping installation"
   fi
 }
 

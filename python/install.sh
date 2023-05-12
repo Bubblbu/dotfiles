@@ -1,11 +1,13 @@
 #!/bin/sh
 
+source $DOTHOME/functions/logging
+
 install_package() {
     if ! command -v $1 &> /dev/null; then
-        echo "Could not find $1; attempting to install"
+        loginfo "Could not find $1; attempting to install"
         $2
     else
-        echo "$1 installed; skipping installation"
+        loginfo "$1 installed; skipping installation"
     fi
 }
 
