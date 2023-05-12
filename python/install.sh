@@ -1,7 +1,7 @@
 #!/bin/sh
 
 install_package() {
-    if ! command_exists $1; then
+    if ! command -v $1 &> /dev/null; then
         echo "Could not find $1; attempting to install"
         $2
     else
@@ -11,7 +11,6 @@ install_package() {
 
 ### Packages ###
 # Install pyenv
-pkg_name="pyenv"
 install_cmd () {
     # install pyenv
     curl https://pyenv.run | bash
@@ -28,20 +27,20 @@ install_cmd () {
     pyenv install $PY_VERSION
     pyenv global $PY_VERSION
 }
-install_package "$pkg_name" install_cmd
-
-# install poetry
-pkg_name="poetry"
-install_cmd() { 
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
-}
-install_package "$pkg_name" install_cmd
+install_package "pyenv" install_cmd
 
 # install pipx
 pkg_name="pipx"
 install_cmd() { 
     python -m pip install --user pipx
     python -m pipx ensurepath
+}
+install_package "$pkg_name" install_cmd
+
+# install poetry
+pkg_name="poetry"
+install_cmd() { 
+    pipx install poetry
 }
 install_package "$pkg_name" install_cmd
 

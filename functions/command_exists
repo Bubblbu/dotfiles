@@ -1,3 +1,0 @@
-command_exists() {
-    foobar_loc="$(type -p "$1")" || [[ -z $foobar_loc ]]
-}
