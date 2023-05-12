@@ -1,11 +1,11 @@
-# Install Oh-My-Zsh
+### Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Oh-My-Zsh Themes
+### Oh-My-Zsh Themes
 # Install powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH}/custom/themes/powerlevel10k
 
-# Oh-My-Zsh Plugins
+### Oh-My-Zsh Plugins
 # Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH}/custom/plugins/zsh-autosuggestions
 
@@ -17,3 +17,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH}/custom
 
 # Install git-flow-completion
 git clone https://github.com/bobthecow/git-flow-completion ${ZSH}/custom/plugins/git-flow-completion
+
+### External plugins
+# zsh-autopair
+if [[ ! -d ~/.zsh-autopair ]]; then
+  git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
+fi
