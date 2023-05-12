@@ -17,21 +17,22 @@ setopt NO_HIST_BEEP # Turn off beep when non-existing history element is accesse
 setopt PROMPT_SUBST # Additional subsitutions
 setopt CORRECT # Try to correct the spelling of commands
 
+##############
+# Plugins    #
+##############
+
 # Init autopair
 source ~/.zsh-autopair/autopair.zsh
 autopair-init
 
-####################
-# Git Autocomplete #
-####################
-
+# Improve git autocomplete performace
 __git_files () { 
     _wanted files expl 'local files' _files     
 }
 
-#################
-# Misc settings #
-#################
+########################
+# Misc system settings #
+########################
 
 # Turn off BIOS sounds
 xset -b
