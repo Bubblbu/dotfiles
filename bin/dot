@@ -20,31 +20,33 @@ displayUsageAndExit() {
 	echo "  -b, --bootstrap	Bootstrap all dotfiles"
 	echo "  -i, --install		Run install scripts"
 	echo "  -h, --help    	Show this help message and exit"
-	exit
+	exit 0
 }
 
+# Print usage synopsis if no argument provided
+if [ $# -eq 0 ]; then
+	displayUsageAndExit
+fi
+
+# Parse arguments
 while test $# -gt 0; do
 	case "$1" in
-	"h" | "-h" | "--help")
+	"h" | "-h" | "--help") # Display usage synopsis
 		displayUsageAndExit
 		;;
-	"e" | "-e" | "--edit")
+	"e" | "-e" | "--edit") # Open dotfiles in default editor
 		exec "$EDITOR" "$dotfilesDirectory"
-		exit
 		;;
-	"b" | "-b" | "--bootstrap")
+	"b" | "-b" | "--bootstrap") # Bootstrap all zsh configurations
 		$DOTHOME/bootstrap
-		exit
 		;;
-	"i" | "-i" | "--install")
+	"i" | "-i" | "--install") # Run installer scripts
 		$DOTHOME/install
-		exit
 		;;
 	*)
+		echo "Unknown argument"
+		echo ""
 		displayUsageAndExit
-		;;
 	esac
 	shift
 done
-
-export ZSH=$HOME/.dotfiles
