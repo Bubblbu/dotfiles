@@ -15,7 +15,6 @@ My dotfiles managed using [@holman's approach](https://github.com/holman/dotfile
     -e, --edit            Open dotfiles directory for editing
     -b, --bootstrap       Bootstrap all dotfiles
     -i, --install         Run install scripts
-    -s, --snap                    Copy snap .desktop files
     -h, --help            Show this help message and exit
 ```
 
@@ -24,10 +23,17 @@ My dotfiles managed using [@holman's approach](https://github.com/holman/dotfile
 Clone this repository into your home directory and run the following scripts:
 
 ```
-cd bootstrap
+git clone https://github.com/bubblbu/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 source bootstrap
-source install
 ```
+
+This will symlink all .dotfiles from the individual folders in ~/.dotfiles to their respective locations:
+
+- `topic/filename.symlink` files will be symlinked to `~/.filename`
+- `topic/filename.ending.xdg` files will be symlinked to `~/.config/topic/filename.ending`
+
+Furthermore, `source install` will run a few useful installers specified in `topic/install.sh`
 
 ## how it works
 
@@ -55,7 +61,7 @@ This is an overview of all included dotfiles which I need as I simply keep forge
 ### General
 
 - System: Contains global aliases, some paths & envs, and SSH stuff
-- bin: Contains functions that are globally made available
+- bin: Contains functions that are made available globally
 - functions: `functions`
 
 ### ZSH & oh-my-zsh
@@ -77,19 +83,3 @@ Requirements: pyenv, poetry, pipx, and a few packages that I always need (black,
 
 - Python: `aliases.zsh`, `python/path.zsh`, `python/install.sh`
 - Jupyter: `jupyter_notebook_config.py.xdg`
-
-### My Desktop Environments
-
-I also use this repository to manage my configuration files for desktop environments. I have not yet figured out a good way to manage automatic loading of the different settings for various machines.
-
-- LXDE
-  - `openbox/aliases.zsh`, `openbox/rc.xml.symlink`
-  - `lxpanel/panel.xdg` 
-  - `compton/compton.conf.xdg`
-- KDE
-
-### Deprecated
-
-dotfiles that you will find in the commit history but are no longer used:
-
-- Task warrior
