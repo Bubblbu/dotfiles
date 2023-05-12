@@ -33,11 +33,11 @@ while test $# -gt 0; do
 		exit
 		;;
 	"b" | "-b" | "--bootstrap")
-		$DOTHOME/script/bootstrap
+		$DOTHOME/bootstrap
 		exit
 		;;
 	"i" | "-i" | "--install")
-		$DOTHOME/script/install
+		$DOTHOME/install
 		exit
 		;;
 	*)
