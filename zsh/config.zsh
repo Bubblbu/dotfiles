@@ -17,6 +17,10 @@ setopt NO_HIST_BEEP # Turn off beep when non-existing history element is accesse
 setopt PROMPT_SUBST # Additional subsitutions
 setopt CORRECT # Try to correct the spelling of commands
 
+# Init autopair
+source ~/.zsh-autopair/autopair.zsh
+autopair-init
+
 ####################
 # Git Autocomplete #
 ####################
