@@ -8,7 +8,7 @@ DOTFILES_ROOT=$(pwd -P)
 set -e
 
 # Functions
-user () {
+loguser () {
   printf "\r  [ \033[0;33m??\033[0m ] $1\n"
 }
 
@@ -102,7 +102,7 @@ link_file () {
 }
 
 setup_gitconfig () {
-  if ! [ -f git/gitconfig.local.symlink ]
+  if ! [ -f $DOTHOME/git/gitconfig.local.symlink ]
   then
     loginfo '> setup gitconfig'
 
