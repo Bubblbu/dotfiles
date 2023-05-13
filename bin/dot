@@ -16,10 +16,10 @@ displayUsageAndExit() {
 	echo "Usage: dot [options]"
 	echo ""
 	echo "Options:"
-	echo "  -e, --edit		Open dotfiles directory for editing"
-	echo "  -b, --bootstrap	Bootstrap all dotfiles"
-	echo "  -i, --install		Run install scripts"
-	echo "  -h, --help    	Show this help message and exit"
+	echo "  e, -e, --edit			Open dotfiles directory for editing"
+	echo "  b, -b, --bootstrap		Bootstrap all dotfiles"
+	echo "  i, -i, --install		Run install scripts"
+	echo "  h, -h, --help    		Show this help message and exit"
 	exit 0
 }
 
