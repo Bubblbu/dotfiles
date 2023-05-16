@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "files.associations": {
+        "*.symlink": "shellscript"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "redhat.telemetry.enabled": false,
+    "editor.largeFileOptimizations": false,
+    "window.zoomLevel": 1,
+    "update.mode": "manual"
+}
