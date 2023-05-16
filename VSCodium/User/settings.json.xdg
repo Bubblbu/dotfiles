@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Default Dark+",
     "files.associations": {
         "*.symlink": "shellscript"
     },

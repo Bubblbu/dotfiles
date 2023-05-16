@@ -1,3 +1,3 @@
 # aliases for flatpaks
-alias codium='com.vscodium.codium'
+alias codium='codium'
 alias chromium='org.chromium.Chromium'

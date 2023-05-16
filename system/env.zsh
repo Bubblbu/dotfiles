@@ -1,5 +1,5 @@
 # EDITOR
-export EDITOR='com.vscodium.codium'
+export EDITOR='codium'
 
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
