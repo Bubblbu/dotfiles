@@ -2,10 +2,7 @@
 #
 # bootstrap installs things.
 
-source functions/logging
-
-cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd -P)
+source $DOTHOME/functions/logging
 
 set -e
 
@@ -29,7 +26,7 @@ link_file () {
 
       else
 
-        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+        loguser "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
@@ -105,7 +102,7 @@ setup_gitconfig () {
 install_dotfiles () {
   loginfo '> installing dotfiles'
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+  for src in $(find -H "$DOTHOME" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
@@ -115,7 +112,7 @@ install_dotfiles () {
 install_XDG_dotfiles () {
   loginfo '> installing dotfiles for XDG_CONFIG_HOME'
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.xdg' -not -path '*.git*')
+  for src in $(find -H "$DOTHOME" -maxdepth 2 -name '*.xdg' -not -path '*.git*')
   do
     dir=$(dirname $src)
     app=${dir##*/}
