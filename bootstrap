@@ -112,11 +112,15 @@ install_dotfiles () {
 install_XDG_dotfiles () {
   loginfo '> installing dotfiles for XDG_CONFIG_HOME'
 
-  for src in $(find -H "$DOTHOME" -maxdepth 2 -name '*.xdg' -not -path '*.git*')
+  for src in $(find -H "$DOTHOME" -maxdepth 3 -name '*.xdg' -not -path '*.git*')
   do
-    dir=$(dirname $src)
-    app=${dir##*/}
-    dst="$HOME/.config/$app/$(basename "${src%.*}")"
+    # remove base directory from path to configs
+    pattern="${DOTHOME}/" 
+    config=${src/$pattern/}
+    config=${config%.*} # remove .xdg ending
+    
+    dst="$HOME/.config/$config"
+    
     link_file "$src" "$dst"
   done
 }
