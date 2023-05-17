@@ -1,19 +1,22 @@
 {
-    "files.associations": {
-        "*.symlink": "shellscript"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "explorer.confirmDragAndDrop": false,
-    "[markdown]": {
-        "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "redhat.telemetry.enabled": false,
-    "editor.largeFileOptimizations": false,
-    "window.zoomLevel": 1,
-    "update.mode": "manual"
+  "files.associations": {
+    "*.symlink": "shellscript",
+    "*.toml": "toml"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "redhat.telemetry.enabled": false,
+  "editor.largeFileOptimizations": false,
+  "update.mode": "manual"
 }
