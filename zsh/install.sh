@@ -15,7 +15,7 @@ install_zsh_plugin() {
 # Oh-My-Zsh #
 #############
 pkg_name="oh-my-zsh"
-folder="$HOME/.oh-my-zsh"
+folder="$ZSH"
 install_cmd() {
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
