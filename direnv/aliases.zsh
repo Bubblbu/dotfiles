@@ -1,0 +1,1 @@
+alias make_envrc="echo 'layout poetry' > .envrc"
