@@ -18,7 +18,7 @@ install_cmd () {
     curl https://pyenv.run | bash
 
     # config and setup pyenv
-    [[ -z "$PYENV_ROOT" ]] && export PYENV_ROOT="$HOME/.pyenv"
+    [[ -z "$PYENV_ROOT" ]] && export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
     export PATH="$PYENV_ROOT/bin:$PATH"
 
     pyenv init --path
