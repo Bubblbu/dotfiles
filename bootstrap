@@ -2,7 +2,7 @@
 #
 # bootstrap installs things.
 
-source $DOTHOME/functions/logging
+source $HOME/.dotfiles/functions/logging
 
 set -e
 
@@ -82,7 +82,7 @@ link_file () {
 }
 
 setup_gitconfig () {
-  if ! [ -f $DOTHOME/git/gitconfig.local.symlink ]
+  if ! [ -f $DOTHOME/git/config.local.xdg ]
   then
     loginfo '> setup gitconfig'
 

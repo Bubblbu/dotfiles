@@ -43,8 +43,6 @@
         branch = auto
         ui = true
 
-
-
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -60,3 +58,6 @@
 # set default branch name to main instead of master
 [init]
 	defaultBranch = main
+
+[include]
+  path = config.local
