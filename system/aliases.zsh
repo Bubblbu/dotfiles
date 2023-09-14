@@ -40,3 +40,6 @@ alias -g 'scholcomm_gate=scholcomm_gate -t zsh'
 
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# Youtube
+alias yt_mp3="yt-dlp -f 'ba' -x --audio-format mp3 &1 -o '%(id)s.%(ext)s'"
