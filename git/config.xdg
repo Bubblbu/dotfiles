@@ -1,63 +1,63 @@
-# `git dft` is less to type than `git difftool`.
-[alias]
-        dft = difftool
+[core]
+excludesfile = "~/.config/git/ignore"
+editor = vim
+pager = delta # --theme=\"Monokai Extended\" 
 
 # Local/private config goes in the include
 [include]
-        path = ~/.gitconfig.local
+path = "~/.config/git/config.local"
+
 [hub]
-        protocol = https
-
-[core]
-        excludesfile = ~/.gitignore
-        editor = vim
-        pager = delta # --theme=\"Monokai Extended\" 
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true  # use n and N to move between diff sections
-    side-by-side = true
-    line-numbers = true
-
-[merge]
-    conflictstyle = diff3
-
-[diff]
-    colorMoved = default
-    tool = difftastic
-
-[difftool]
-        prompt = false
-
-[difftool "difftastic"]
-        cmd = difft "$LOCAL" "$REMOTE"
-
-[pager]
-        difftool = true
-
-[color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
-
-[apply]
-        whitespace = nowarn
-[mergetool]
-        keepBackup = false
-
-[help]
-        autocorrect = 1
-[pull]
-        rebase = false
-[push]
-        default = simple
+protocol = https
 
 # set default branch name to main instead of master
 [init]
-	defaultBranch = main
+defaultBranch = main
 
-[include]
-  path = config.local
+[help]
+autocorrect = 1
+
+[pull]
+rebase = false
+
+[push]
+default = simple
+
+# `git dft` is less to type than `git difftool`.
+[alias]
+dft = difftool
+
+[interactive]
+diffFilter = delta --color-only
+
+[delta]
+navigate = true  # use n and N to move between diff sections
+side-by-side = true
+line-numbers = true
+
+[merge]
+conflictstyle = diff3
+
+[diff]
+colorMoved = default
+tool = difftastic
+
+[difftool]
+prompt = false
+
+[difftool "difftastic"]
+cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+difftool = true
+
+[color]
+diff = auto
+status = auto
+branch = auto
+ui = true
+
+[apply]
+whitespace = nowarn
+[mergetool]
+keepBackup = false

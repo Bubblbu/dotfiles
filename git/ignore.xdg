@@ -6,3 +6,9 @@
 # Coding
 .vscode
 .ipynb_checkpoints
+
+# direnv
+.envrc
+
+# environment files
+.env
