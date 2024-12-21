@@ -42,4 +42,4 @@ alias -g 'scholcomm_gate=scholcomm_gate -t zsh'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # Youtube
-alias yt_mp3="yt-dlp -f 'ba' -x --audio-format mp3 &1 -o '%(id)s.%(ext)s'"
+alias yt_mp3="yt-dlp -f 'ba' -x --audio-format mp3 $1 -o '%(id)s.%(ext)s'"
