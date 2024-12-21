@@ -24,9 +24,9 @@ Furthermore, `source install` will run a few useful installers specified in `top
 `dot` provides a few wrappers to access the essential functions required to manage your dotfiles.
 
 ```console
-  dot -- dotfiles management
+  mydot -- dotfiles management
 
-  Usage: dot [options]
+  Usage: mydot [options]
 
   Options:
     -e, --edit            Open dotfiles directory for editing
